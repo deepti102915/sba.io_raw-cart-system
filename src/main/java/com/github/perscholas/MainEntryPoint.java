@@ -15,7 +15,7 @@ public class MainEntryPoint {
 			choice = reader.nextInt();
 			switch (choice) {
 			case 1:
-				Item item = new Item();
+				Item item = new Item("");
 				reader.nextLine();
 				System.out.print("\nEnter the item name:\n");
 				item.setItemName(reader.nextLine());
@@ -37,7 +37,7 @@ public class MainEntryPoint {
 				System.out.println("Enter the name of the item");
 				reader.nextLine();
 				String item_name = reader.nextLine();
-				if (cart.add(app.getItemCollection().get(item_name))) {
+				if (cart.add((app.getItemCollection().get(item_name)))) {
 					System.out.println("Item successfully added");
 				} else {
 					System.out.println("Invalid or Unavailable Item, Please Try Again");
