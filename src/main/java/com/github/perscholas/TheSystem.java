@@ -41,6 +41,20 @@ public abstract class TheSystem {
 		return true;
 	}
 
+	/*public Boolean update(Item item) {
+		// Your code here
+		if(itemCollection.containsKey(item.getItemName())){
+			//item.setAvailableQuantity(item.getQuantity() + 1);
+			System.out.println("Update "+item.getQuantity());
+			item.setQuantity(item.getQuantity());
+			itemCollection.put(item.getItemName(),item);
+			return true;
+		}
+		//itemCollection.put(item.getItemName(),item);
+		itemCollection.put(item.getItemName(),item);
+		return true;
+	}*/
+
 	public Item remove(String itemName) {
 		// Your code here
 		Item tempItem = itemCollection.get(itemName);

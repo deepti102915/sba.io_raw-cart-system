@@ -9,6 +9,7 @@ public class MainEntryPoint {
 		AppSystem app = new AppSystem();
 		CartSystem cart = new CartSystem();
 		Scanner reader = new Scanner(System.in);
+
 		Integer choice = 0;
 		while (choice != 7) {
 			menu();
@@ -32,12 +33,20 @@ public class MainEntryPoint {
 					System.out.println("Try Again");
 				}
 				break;
-			case 2:
+				case 2:
+				Item	item2 = new Item("");
 				app.display();
 				System.out.println("Enter the name of the item");
 				reader.nextLine();
 				String item_name = reader.nextLine();
+				//item2.setItemName(item_name);
 				if (cart.add((app.getItemCollection().get(item_name)))) {
+					//System.out.println("Enter the quantity of the item");
+					//reader.nextLine();
+					//String item_quantity = (reader.nextLine());
+					//System.out.println("Item quantity" + item_quantity);
+					//item2.setQuantity(Integer.parseInt(item_quantity));
+					//app.update(item2);
 					System.out.println("Item successfully added");
 				} else {
 					System.out.println("Invalid or Unavailable Item, Please Try Again");
@@ -78,7 +87,7 @@ public class MainEntryPoint {
 
 				break;
 			case 7:
-				System.out.println("\nByyyeee!!");
+				System.out.println("\nBye!!");
 				break;
 			}
 		}

@@ -9,7 +9,7 @@ public class Item{
     private Integer availableQuantity;
     public Item(String itemName){
         this.itemName = itemName;
-        quantity = 1;
+        this.quantity = 1;
     }
 
     public Integer getAvailableQuantity() { return availableQuantity; }
