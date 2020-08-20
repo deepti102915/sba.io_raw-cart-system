@@ -8,7 +8,8 @@ import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
+import java.util.Scanner;
+import java.lang.StringBuilder;
 import java.util.stream.Stream;
 
 public abstract class TheSystem {
@@ -72,6 +73,17 @@ public abstract class TheSystem {
 		HashMap<String,Item> tempMap = new HashMap<String, Item>();
 		File file = new File("src/main/resources/sample.txt");
 		ArrayList<String[]> builder = new ArrayList<>();
+
+		ArrayList<String> Test = new ArrayList<String>();
+		Scanner myReader = new Scanner(file);
+
+		while (myReader.hasNext()) {
+			Test.add(myReader.nextLine());
+		}
+		String[] yourArray = Test.toString().split(",");
+		System.out.println("Line 1 Data: " + Test);
+		System.out.println("Line 1 Data: " + yourArray[0]);
+
 		Files.lines(file.toPath()).forEach(line -> builder.add(line.split("  ")));
 		builder.forEach(item -> tempMap.put(item[0],new ItemBuilder().withItemName(item[0]).withItemDesc(item[1]).withItemPrice(Double.parseDouble(item[2])).withAvailableQuantity(Integer.parseInt(item[3])).build()));
 		return tempMap;
